@@ -24,6 +24,17 @@ public class LinkedList {
 			tail = newNode;
 		}
 	}
+	public void addNodeATend(int num) {
+		Node newNode = new Node(num);
+		 
+		if (head == null) {
+			head = newNode;
+		}
+		else {
+			newNode.next = head;
+			head = newNode;
+		}
+	}
 	public void display() {
 		Node current = head;
 
@@ -31,7 +42,7 @@ public class LinkedList {
 			System.out.println("List is empty");
 			return;
 		}
-		System.out.println("Nodes of singly linked list:");
+		System.out.println("Nodes of singley linked list:");
 		while(current != null) {
 			System.out.println(current.num+"");
 			current = current.next;
@@ -46,6 +57,10 @@ public class LinkedList {
 		list.addNode(56);
 		list.addNode(30);
 		list.addNode(70);
+		
+		list.addNodeATend(70);
+		list.addNodeATend(30);
+		list.addNodeATend(56);
 		
 		list.display();
 	}
